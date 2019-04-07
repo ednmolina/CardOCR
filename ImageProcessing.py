@@ -100,11 +100,10 @@ image_gamma_array = np.exp(np.log(image_n)*gamma)*np.max(image)
 image_gamma_array = image_gamma_array.astype(np.uint8)
 
 
-# In[68]:
+# In[235]:
 
 
-plt.figure(figsize = (12, 12))
-fig, ax = plt.subplots(1, 2)
+fig, ax = plt.subplots(1, 2, figsize = (10, 10))
 ax[0].imshow(image)
 ax[0].title.set_text("Before")
 
@@ -116,11 +115,10 @@ plt.show()
 # # Plot histograms of image
 # This allows us to see the distribution of pixel intensities in the image. We can see that the image inensities got slightly shifted to the right and lowered in intensitiy in the midrange.
 
-# In[70]:
+# In[238]:
 
 
-plt.figure(figsize = (12, 12))
-fig, ax = plt.subplots(1, 2)
+fig, ax = plt.subplots(1, 2, figsize = (10, 6))
 ax[0].hist(image.flatten(), bins = 100)
 ax[0].title.set_text("Before")
 
@@ -217,10 +215,10 @@ histogram_equalized = Image.fromarray(histogram_equalized_array)
 
 # ## Plot images before and after histogram equalization
 
-# In[171]:
+# In[239]:
 
 
-fig, ax = plt.subplots(1, 2, figsize = (12, 12))
+fig, ax = plt.subplots(1, 2, figsize = (10, 10))
 ax[0].imshow(image, cmap = 'gray')
 ax[0].title.set_text("Before")
 
